@@ -1,5 +1,5 @@
 
-namespace listas.Libs.Utilitarios
+namespace listas.Classes.Utilitarios
 {
     public static class Perfumaria
     {
@@ -11,17 +11,17 @@ namespace listas.Libs.Utilitarios
         ///     
         /// Após seu primeiro uso você poderá acessar propriedade estática Perfumaria.Menu e reutilizar sempre que precisar.
         /// </summary>
-        /// <param name="itens">Array de itens do menu</param>
-        /// <param name="tituloMenu">Título do menu. Parâmetro opcional</param>
+        /// <param name="_itens">Array de itens do menu</param>
+        /// <param name="_tituloMenu">Título do menu. Parâmetro opcional</param>
         /// <returns>Retorna uma string de menu formatada</returns>
-        public static string GeraNovoMenu(string[] itens, string tituloMenu = "")
+        public static string GeraNovoMenu(string[] _itens, string _tituloMenu = "")
         {
-            string menu = tituloMenu == "" ? "Menu" : $"{tituloMenu}";
-            menu = $"{TudoMaiusculo(tituloMenu)}\n\n";
+            string menu = _tituloMenu == "" ? "Menu" : $"{_tituloMenu}";
+            menu = $"{TudoMaiusculo(_tituloMenu)}\n\n";
 
-            for (int posicao = 0; posicao < itens.Length; posicao++)
+            for (int posicao = 0; posicao < _itens.Length; posicao++)
             {
-                menu += $"{posicao + 1}) {itens[posicao]}\n";
+                menu += $"{posicao + 1}) {_itens[posicao]}\n";
             }
 
             Menu = menu;
@@ -30,14 +30,14 @@ namespace listas.Libs.Utilitarios
         }
 
 
-        public static string TudoMaiusculo(string txt)
+        public static string TudoMaiusculo(string _txt)
         {
-            return txt.ToUpper();
+            return _txt.ToUpper();
         }
 
-        public static string TudoMinusculo(string txt)
+        public static string TudoMinusculo(string _txt)
         {
-            return txt.ToLower();
+            return _txt.ToLower();
         }
 
         public static void LimpaTela()
@@ -52,34 +52,34 @@ namespace listas.Libs.Utilitarios
             
         }
 
-        public static void PulaLinha(int qtdLinha) {
+        public static void PulaLinha(int _qtdLinha) {
             
             // chama a primeira sobrecarga
-            if (qtdLinha == 1)
+            if (_qtdLinha == 1)
             {
                 PulaLinha();
             }
             else
             {
-                for (int l = 1; l <= qtdLinha; l++)
+                for (int l = 1; l <= _qtdLinha; l++)
                 {
                     Console.WriteLine();
                 }
             }
         }
         
-        public static void PulaLinha(int qtdLinha, string marcador = "") {
+        public static void PulaLinha(int _qtdLinha, string _marcador = "") {
             
             // chama a primeira sobrecarga
-            if (qtdLinha == 1)
+            if (_qtdLinha == 1)
             {
                 PulaLinha();
             }
             else
             {
-                for (int l = 1; l <= qtdLinha; l++)
+                for (int l = 1; l <= _qtdLinha; l++)
                 {
-                    Console.WriteLine(marcador);
+                    Console.WriteLine(_marcador);
                 }
             }
         }

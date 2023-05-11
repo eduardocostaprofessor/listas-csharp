@@ -1,9 +1,11 @@
 
-namespace listas.Libs.Estoque
+using listas.Interfaces;
+
+namespace listas.Classes.Estoque
 {
-    public class Estoque
+    public class Estoque : IEstoque
     {
-        private List<Produto>? ListaProdutos;
+        private List<Produto> ? ListaProdutos;
 
         public Estoque()
         {
@@ -15,7 +17,7 @@ namespace listas.Libs.Estoque
             this.ListaProdutos = new List<Produto>();
         }
 
-        public List<Produto> RetornaListaProdutos()
+        public List<Produto> RetornaLista()
         {
             return this.ListaProdutos!;
         }
@@ -23,20 +25,21 @@ namespace listas.Libs.Estoque
         // CRUD
 
         // CREATE
-        public void AdicionaItem(Produto _produto)
+        public void CadastrarProduto(Produto _produto)
         {
 
             this.ListaProdutos.Add(_produto);
         }
 
         // READ
-        public List<Produto> RetornaLista()
+        
+        public List<Produto> ListarProduto()
         {
             return this.ListaProdutos!;
         }
 
         // UPDATE
-        public bool AtualizaLista(Produto _produto)
+        public bool AtualizarProduto(Produto _produto)
         {
             // Procura o produto na lista
             Produto produtoEncontrado = this.ListaProdutos.Find(prod => prod.Codigo == _produto.Codigo)!;
@@ -57,7 +60,7 @@ namespace listas.Libs.Estoque
         }
 
         // DELETE
-        public bool AtualizaItemDaLista(Produto _produto)
+        public bool ApagarProduto(Produto _produto)
         {
             // pega o índice do produto que será removido
             int indiceParaRemover = this.ListaProdutos.IndexOf(_produto);
@@ -71,5 +74,6 @@ namespace listas.Libs.Estoque
 
             return false;
         }
+
     }
 }

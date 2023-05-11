@@ -1,5 +1,5 @@
 
-namespace listas.Libs.Estoque
+namespace listas.Classes.Estoque
 {
     public class Produto
     {

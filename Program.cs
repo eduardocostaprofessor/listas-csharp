@@ -1,5 +1,5 @@
-﻿using listas.Libs.Estoque;
-using listas.Libs.Utilitarios;
+﻿using listas.Classes.Estoque;
+using listas.Classes.Utilitarios;
 
 // List<Produto> prods = new List<Produto>();
 
@@ -21,7 +21,7 @@ using listas.Libs.Utilitarios;
 
 // Console.WriteLine();
 
+
 Perfumaria.LimpaTela();
 string[] arrMenu = new string[] { "Cadastrar", "Listar", "Atualizar", "Apagar" };
 Console.WriteLine(Perfumaria.GeraNovoMenu(arrMenu, "Cadastro de Produtos"));
- 
